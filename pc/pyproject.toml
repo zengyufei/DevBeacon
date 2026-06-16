@@ -1,0 +1,14 @@
+[project]
+name = "notifyphone"
+version = "0.1.0"
+description = "Local low-power PC-to-Android notification bridge."
+requires-python = ">=3.11"
+authors = [{ name = "notifyPhone" }]
+dependencies = []
+
+[project.scripts]
+notifyphone = "notifyphone.cli:main"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

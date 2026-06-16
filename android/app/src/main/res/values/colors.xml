@@ -1,0 +1,6 @@
+<resources>
+    <color name="app_primary">#246B5A</color>
+    <color name="app_surface">#F7FAF8</color>
+    <color name="app_text">#18201D</color>
+    <color name="ic_launcher_background">#246B5A</color>
+</resources>

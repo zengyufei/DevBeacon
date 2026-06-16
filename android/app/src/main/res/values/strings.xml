@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">notifyPhone</string>
+    <string name="notification_channel_name">notifyPhone Alerts</string>
+    <string name="service_channel_name">notifyPhone Link</string>
+</resources>

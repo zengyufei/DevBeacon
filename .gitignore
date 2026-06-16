@@ -1,0 +1,51 @@
+# Build outputs
+build/
+dist/
+*.apk
+*.aab
+*.ap_
+
+# Android and Gradle
+.gradle/
+.kotlin/
+android/.gradle/
+android/.kotlin/
+android/build/
+android/app/build/
+android/local.properties
+
+# Keep the Gradle wrapper committed for reproducible CI builds.
+!android/gradle/wrapper/gradle-wrapper.jar
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+env/
+*.egg-info/
+
+# Logs and local diagnostics
+*.log
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Local environment files
+.env
+.env.*
+!.env.example
+
+# Editor and OS files
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+desktop.ini

@@ -1,0 +1,69 @@
+name: Build Release
+
+on:
+  push:
+    branches:
+      - "**"
+    paths-ignore:
+      - "**.md"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Build and publish APK
+    runs-on: ubuntu-latest
+    env:
+      outputs_dir: "${{ github.workspace }}/android/app/build/outputs"
+      ver_name: ""
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Build with Gradle
+        working-directory: android
+        run: |
+          chmod +x gradlew
+          ./gradlew :app:assembleDebug --build-cache --parallel --daemon --warning-mode all
+
+      - name: Init environment variable
+        run: |
+          echo "ver_name=$(grep -m 1 'versionName' ${{ env.outputs_dir }}/apk/debug/output-metadata.json | cut -d\" -f4)" >> $GITHUB_ENV
+
+      - name: Prepare APK name
+        run: |
+          mkdir -p "${{ github.workspace }}/release"
+          cp "${{ env.outputs_dir }}/apk/debug/app-debug.apk" "${{ github.workspace }}/release/notifyPhone_${{ env.ver_name }}_debug.apk"
+
+      - name: Upload APK To Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: "notifyPhone_debug_${{ env.ver_name }}"
+          path: ${{ github.workspace }}/release/notifyPhone_${{ env.ver_name }}_debug.apk
+          if-no-files-found: error
+
+      - name: Publish GitHub release
+        uses: softprops/action-gh-release@v0.1.15
+        with:
+          name: ${{ env.ver_name }}
+          tag_name: ${{ env.ver_name }}
+          body: "Automated APK build for notifyPhone ${{ env.ver_name }}."
+          draft: false
+          prerelease: false
+          files: ${{ github.workspace }}/release/*.apk
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
