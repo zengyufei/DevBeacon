@@ -37,7 +37,7 @@ def make_payload(
     title: str,
     body: str,
     level: str = "info",
-    source: str = "notifyphone",
+    source: str = "devbeacon",
     ttl_seconds: int = 300,
     dedupe_key: str | None = None,
     event_type: str | None = None,

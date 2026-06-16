@@ -1,4 +1,4 @@
-package com.notifyphone.app
+package com.devbeacon.app
 
 object PowerPolicy {
     fun initialPollSeconds(mode: PowerMode): Int {

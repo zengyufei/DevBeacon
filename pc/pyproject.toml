@@ -1,13 +1,13 @@
 [project]
-name = "notifyphone"
+name = "devbeacon"
 version = "0.1.0"
 description = "Local low-power PC-to-Android notification bridge."
 requires-python = ">=3.11"
-authors = [{ name = "notifyPhone" }]
+authors = [{ name = "DevBeacon" }]
 dependencies = []
 
 [project.scripts]
-notifyphone = "notifyphone.cli:main"
+devbeacon = "devbeacon.cli:main"
 
 [tool.pytest.ini_options]
 pythonpath = ["src"]

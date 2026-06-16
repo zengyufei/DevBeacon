@@ -1,4 +1,4 @@
-package com.notifyphone.app
+package com.devbeacon.app
 
 enum class LampState {
     RUNNING_GREEN,

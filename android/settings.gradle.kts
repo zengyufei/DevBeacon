@@ -14,5 +14,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "notifyPhone"
+rootProject.name = "DevBeacon"
 include(":app")

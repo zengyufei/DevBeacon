@@ -1,4 +1,4 @@
-package com.notifyphone.app
+package com.devbeacon.app
 
 import android.app.Service
 import android.content.Intent

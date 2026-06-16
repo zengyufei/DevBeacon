@@ -5,9 +5,9 @@ import threading
 import time
 import urllib.request
 
-from notifyphone.config import Config
-from notifyphone.protocol import make_payload, signed_envelope, verify_signature
-from notifyphone.server import NotifyServer
+from devbeacon.config import Config
+from devbeacon.protocol import make_payload, signed_envelope, verify_signature
+from devbeacon.server import NotifyServer
 
 
 def test_server_accepts_notify_and_poll_returns_signed_envelope():

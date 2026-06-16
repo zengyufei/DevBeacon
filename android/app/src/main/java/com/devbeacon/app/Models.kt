@@ -1,4 +1,4 @@
-package com.notifyphone.app
+package com.devbeacon.app
 
 enum class PowerMode(val displayName: String) {
     LOW("低耗电模式"),

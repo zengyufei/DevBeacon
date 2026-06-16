@@ -1,9 +1,9 @@
-package com.notifyphone.app
+package com.devbeacon.app
 
 import android.content.Context
 
 class StatusStore(context: Context) {
-    private val prefs = context.getSharedPreferences("notifyphone_status", Context.MODE_PRIVATE)
+    private val prefs = context.getSharedPreferences("devbeacon_status", Context.MODE_PRIVATE)
 
     fun load(): LampSnapshot {
         return LampSnapshot(

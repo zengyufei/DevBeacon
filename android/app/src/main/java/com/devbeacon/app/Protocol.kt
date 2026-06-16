@@ -1,4 +1,4 @@
-package com.notifyphone.app
+package com.devbeacon.app
 
 import android.util.Base64
 import org.json.JSONObject
@@ -13,7 +13,7 @@ object Protocol {
         return NotifyMessage(
             id = message.optString("id"),
             timestamp = message.optLong("timestamp"),
-            title = message.optString("title", "notifyPhone"),
+            title = message.optString("title", "DevBeacon"),
             body = message.optString("body"),
             level = message.optString("level", "info"),
             source = message.optString("source", "pc"),
@@ -29,7 +29,7 @@ object Protocol {
         return NotifyMessage(
             id = message.optString("id"),
             timestamp = message.optLong("timestamp"),
-            title = message.optString("title", "notifyPhone"),
+            title = message.optString("title", "DevBeacon"),
             body = message.optString("body"),
             level = message.optString("level", "info"),
             source = message.optString("source", "pc"),

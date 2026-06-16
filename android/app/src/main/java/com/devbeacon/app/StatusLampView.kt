@@ -1,4 +1,4 @@
-package com.notifyphone.app
+package com.devbeacon.app
 
 import android.animation.ValueAnimator
 import android.content.Context

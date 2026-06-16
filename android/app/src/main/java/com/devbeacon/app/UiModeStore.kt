@@ -1,4 +1,4 @@
-package com.notifyphone.app
+package com.devbeacon.app
 
 import android.content.Context
 
@@ -8,7 +8,7 @@ enum class UiMode {
 }
 
 class UiModeStore(context: Context) {
-    private val prefs = context.getSharedPreferences("notifyphone_ui", Context.MODE_PRIVATE)
+    private val prefs = context.getSharedPreferences("devbeacon_ui", Context.MODE_PRIVATE)
 
     fun load(): UiMode {
         return runCatching {

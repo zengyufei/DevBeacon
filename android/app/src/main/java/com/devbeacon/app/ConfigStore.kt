@@ -1,10 +1,10 @@
-package com.notifyphone.app
+package com.devbeacon.app
 
 import android.content.Context
 import java.util.UUID
 
 class ConfigStore(context: Context) {
-    private val prefs = context.getSharedPreferences("notifyphone", Context.MODE_PRIVATE)
+    private val prefs = context.getSharedPreferences("devbeacon", Context.MODE_PRIVATE)
 
     fun load(): NotifyConfig {
         val secret = prefs.getString("sharedSecret", "") ?: ""

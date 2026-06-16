@@ -99,7 +99,7 @@ def _recommended_next_poll(power_policy: str, had_message: bool) -> int:
 
 def run_server(config: Config, host: str, port: int, power_policy: str) -> None:
     httpd = NotifyServer((host, port), config, power_policy)
-    print(f"notifyPhone server listening on http://{host}:{port}")
+    print(f"DevBeacon server listening on http://{host}:{port}")
     print(f"power policy: {power_policy}; Android direct receive is not required in low mode")
     httpd.serve_forever()
 
@@ -113,7 +113,7 @@ def _payload_from_dict(data: dict[str, Any]):
         title=str(data.get("title", "")),
         body=str(data.get("body", "")),
         level=str(data.get("level", "info")),
-        source=str(data.get("source", "notifyphone")),
+        source=str(data.get("source", "devbeacon")),
         ttlSeconds=int(data.get("ttlSeconds", 300)),
         dedupeKey=str(data.get("dedupeKey", data.get("id", ""))),
         eventType=data.get("eventType"),

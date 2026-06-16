@@ -1,4 +1,4 @@
-package com.notifyphone.app
+package com.devbeacon.app
 
 import android.app.NotificationChannel
 import android.app.Notification
@@ -28,7 +28,7 @@ class NotificationHelper(private val context: Context) {
         }
         return builder
             .setSmallIcon(R.drawable.ic_notify)
-            .setContentTitle("notifyPhone")
+            .setContentTitle("DevBeacon")
             .setContentText(status)
             .setOngoing(true)
             .build()
@@ -51,7 +51,7 @@ class NotificationHelper(private val context: Context) {
     }
 
     companion object {
-        const val ALERT_CHANNEL = "notifyphone_alerts"
-        const val SERVICE_CHANNEL = "notifyphone_service"
+        const val ALERT_CHANNEL = "devbeacon_alerts"
+        const val SERVICE_CHANNEL = "devbeacon_service"
     }
 }

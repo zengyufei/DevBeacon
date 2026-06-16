@@ -1,4 +1,4 @@
-package com.notifyphone.app
+package com.devbeacon.app
 
 import android.content.Context
 
@@ -12,7 +12,7 @@ data class RuntimeStatus(
 )
 
 class RuntimeStatusStore(context: Context) {
-    private val prefs = context.getSharedPreferences("notifyphone_runtime", Context.MODE_PRIVATE)
+    private val prefs = context.getSharedPreferences("devbeacon_runtime", Context.MODE_PRIVATE)
 
     fun load(): RuntimeStatus {
         return RuntimeStatus(

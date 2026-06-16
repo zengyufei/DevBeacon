@@ -1,9 +1,9 @@
-from notifyphone.config import Config
-from notifyphone.cli import main
+from devbeacon.config import Config
+from devbeacon.cli import main
 
 
 def test_default_send_does_not_fallback_to_direct_transports(capsys, monkeypatch):
-    monkeypatch.setattr("notifyphone.cli.load_config", lambda: Config(server_port=9))
+    monkeypatch.setattr("devbeacon.cli.load_config", lambda: Config(server_port=9))
     code = main(["send", "--title", "t", "--body", "b"])
     captured = capsys.readouterr()
     assert code == 2
@@ -11,8 +11,8 @@ def test_default_send_does_not_fallback_to_direct_transports(capsys, monkeypatch
 
 
 def test_event_allows_non_running_without_run_id(capsys, monkeypatch, tmp_path):
-    monkeypatch.setattr("notifyphone.config.APP_DIR", tmp_path)
-    monkeypatch.setattr("notifyphone.config.CONFIG_PATH", tmp_path / "config.json")
+    monkeypatch.setattr("devbeacon.config.APP_DIR", tmp_path)
+    monkeypatch.setattr("devbeacon.config.CONFIG_PATH", tmp_path / "config.json")
     code = main(["event", "--state", "attention", "--title", "pick", "--body", "needs input"])
     captured = capsys.readouterr()
     assert code == 2

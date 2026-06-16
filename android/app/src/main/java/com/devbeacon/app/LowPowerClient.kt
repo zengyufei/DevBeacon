@@ -1,4 +1,4 @@
-package com.notifyphone.app
+package com.devbeacon.app
 
 import android.util.Log
 import org.json.JSONObject
@@ -17,7 +17,7 @@ class LowPowerClient(
 
     fun start() {
         running = true
-        Thread({ loop() }, "notifyphone-low-power-client").start()
+        Thread({ loop() }, "devbeacon-low-power-client").start()
     }
 
     fun stop() {

@@ -1,4 +1,4 @@
-# notifyPhone Protocol
+# DevBeacon Protocol
 
 All transports carry the same envelope. `signature` is optional and only appears when `shared_secret` is configured:
 
@@ -73,4 +73,4 @@ When Android direct receive mode is enabled, the app listens on:
 
 `POST http://<android-ip>:8766/notify`
 
-The request body is the same envelope. In unsigned mode, no `signature` is required. This endpoint is for `notifyphone ... --target ip --ip <android-ip>` and does not require `notifyphone serve`.
+The request body is the same envelope. In unsigned mode, no `signature` is required. This endpoint is for `devbeacon ... --target ip --ip <android-ip>` and does not require `devbeacon serve`.

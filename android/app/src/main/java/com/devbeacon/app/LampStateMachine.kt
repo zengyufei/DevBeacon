@@ -1,4 +1,4 @@
-package com.notifyphone.app
+package com.devbeacon.app
 
 object LampStateMachine {
     fun apply(current: LampSnapshot, message: NotifyMessage, nowMillis: Long): LampSnapshot {

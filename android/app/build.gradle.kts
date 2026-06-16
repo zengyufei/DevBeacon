@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.notifyphone.app"
+    namespace = "com.devbeacon.app"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.notifyphone.app"
+        applicationId = "com.devbeacon.app"
         minSdk = 26
         targetSdk = 35
         versionCode = 1

@@ -1,4 +1,4 @@
-package com.notifyphone.app
+package com.devbeacon.app
 
 import android.content.Context
 import org.json.JSONObject
@@ -31,7 +31,7 @@ class DirectReceiveService(
             val socket = ServerSocket(PORT)
             serverSocket = socket
             running.set(true)
-            Thread({ acceptLoop(socket) }, "notifyphone-direct-http").start()
+            Thread({ acceptLoop(socket) }, "devbeacon-direct-http").start()
             "Direct receive HTTP listener is running on port $PORT."
         } catch (error: Exception) {
             running.set(false)

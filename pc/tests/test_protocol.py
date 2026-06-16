@@ -1,6 +1,6 @@
 import pytest
 
-from notifyphone.protocol import make_payload, parse_envelope, payload_to_dict, sign_payload, signed_envelope, verify_signature
+from devbeacon.protocol import make_payload, parse_envelope, payload_to_dict, sign_payload, signed_envelope, verify_signature
 
 
 def test_signature_roundtrip():

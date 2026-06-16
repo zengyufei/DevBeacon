@@ -1,4 +1,4 @@
-package com.notifyphone.app
+package com.devbeacon.app
 
 import android.Manifest
 import android.app.Activity
@@ -285,7 +285,7 @@ class MainActivity : Activity() {
                         NotifyMessage(
                             id = "local-test",
                             timestamp = System.currentTimeMillis() / 1000,
-                            title = "notifyPhone test",
+                            title = "DevBeacon test",
                             body = "Android notification rendering works.",
                             level = "info",
                             source = "android",
@@ -318,7 +318,7 @@ class MainActivity : Activity() {
         }
 
         root.addView(TextView(this).apply {
-            text = "notifyPhone"
+            text = "DevBeacon"
             textSize = 26f
         })
         root.addView(lampView)

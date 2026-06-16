@@ -47,13 +47,13 @@ jobs:
       - name: Prepare APK name
         run: |
           mkdir -p "${{ github.workspace }}/release"
-          cp "${{ env.outputs_dir }}/apk/debug/app-debug.apk" "${{ github.workspace }}/release/notifyPhone_${{ env.ver_name }}_debug.apk"
+          cp "${{ env.outputs_dir }}/apk/debug/app-debug.apk" "${{ github.workspace }}/release/DevBeacon_${{ env.ver_name }}_debug.apk"
 
       - name: Upload APK To Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: "notifyPhone_debug_${{ env.ver_name }}"
-          path: ${{ github.workspace }}/release/notifyPhone_${{ env.ver_name }}_debug.apk
+          name: "DevBeacon_debug_${{ env.ver_name }}"
+          path: ${{ github.workspace }}/release/DevBeacon_${{ env.ver_name }}_debug.apk
           if-no-files-found: error
 
       - name: Publish GitHub release
@@ -61,7 +61,7 @@ jobs:
         with:
           name: ${{ env.ver_name }}
           tag_name: ${{ env.ver_name }}
-          body: "Automated APK build for notifyPhone ${{ env.ver_name }}."
+          body: "Automated APK build for DevBeacon ${{ env.ver_name }}."
           draft: false
           prerelease: false
           files: ${{ github.workspace }}/release/*.apk

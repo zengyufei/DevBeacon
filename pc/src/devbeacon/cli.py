@@ -20,7 +20,7 @@ DIRECT_WARNING = (
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(prog="notifyphone")
+    parser = argparse.ArgumentParser(prog="devbeacon")
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     send_parser = subparsers.add_parser("send", help="Send one notification")
@@ -100,7 +100,7 @@ def _send(args: argparse.Namespace, config: Any) -> int:
             print(f"queued via local server: {reason}")
             return 0
         print(f"local server unavailable: {reason}", file=sys.stderr)
-        print("Start it with: notifyphone serve --power-policy low", file=sys.stderr)
+        print("Start it with: devbeacon serve --power-policy low", file=sys.stderr)
         print("No direct IP, broadcast, or BLE fallback was attempted by default.", file=sys.stderr)
         return 2
 
@@ -157,7 +157,7 @@ def _event(args: argparse.Namespace, config: Any) -> int:
             print(json.dumps({"ok": True, "state": args.state, "runId": run_id, "transport": "server"}, ensure_ascii=False))
             return 0
         print(f"local server unavailable: {reason}", file=sys.stderr)
-        print("Start it with: notifyphone serve --power-policy low", file=sys.stderr)
+        print("Start it with: devbeacon serve --power-policy low", file=sys.stderr)
         return 2
 
     if args.target == "ip":

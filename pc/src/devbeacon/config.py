@@ -5,7 +5,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 
-APP_DIR = Path.home() / ".notifyphone"
+APP_DIR = Path.home() / ".devbeacon"
 CONFIG_PATH = APP_DIR / "config.json"
 
 
