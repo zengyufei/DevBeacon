@@ -4,6 +4,38 @@ DevBeacon is a local PC-to-Android notification bridge for Claude Code and other
 
 Battery conservation is the default. In normal production mode Android actively polls the PC server and does not open a direct listener. Direct receive mode is available when you explicitly want one-shot CLI sends without starting the PC server.
 
+## App preview
+
+Production mode is designed as a quiet status lamp: the phone can sit beside the keyboard and show Claude Code state at a glance without extra text. Green means running, yellow means waiting for human input, and red means idle or finished.
+
+<table>
+  <tr>
+    <td align="center"><strong>Running</strong></td>
+    <td align="center"><strong>Attention</strong></td>
+    <td align="center"><strong>Idle</strong></td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/运行中.jpg" width="220" alt="DevBeacon running state" /></td>
+    <td><img src="docs/screenshots/选择中.jpg" width="220" alt="DevBeacon attention state" /></td>
+    <td><img src="docs/screenshots/空闲中.jpg" width="220" alt="DevBeacon idle state" /></td>
+  </tr>
+</table>
+
+Configuration and diagnostics stay one tap away: production mode keeps only the lamp, timer, and size slider; debug mode exposes connection details for setup and troubleshooting.
+
+<table>
+  <tr>
+    <td align="center"><strong>Configuration</strong></td>
+    <td align="center"><strong>Debug mode</strong></td>
+    <td align="center"><strong>Install screen</strong></td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/配置.jpg" width="220" alt="DevBeacon configuration dialog" /></td>
+    <td><img src="docs/screenshots/调试模式.jpg" width="220" alt="DevBeacon debug mode" /></td>
+    <td><img src="docs/screenshots/安装界面.jpg" width="220" alt="DevBeacon Android install screen" /></td>
+  </tr>
+</table>
+
 ## PC quick start
 
 ```powershell

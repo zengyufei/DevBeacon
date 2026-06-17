@@ -632,10 +632,11 @@ class MainActivity : Activity() {
     }
 
     private fun formatDuration(milliseconds: Long): String {
-        val totalSeconds = milliseconds / 1000L
-        val minutes = totalSeconds / 60L
+        val totalSeconds = milliseconds.coerceAtLeast(0L) / 1000L
         val seconds = totalSeconds % 60L
-        return "%02d:%02d".format(minutes, seconds)
+        val minutes = (totalSeconds / 60L) % 60L
+        val hours = totalSeconds / 3600L
+        return "%02d:%02d:%02d".format(hours, minutes, seconds)
     }
 
     companion object {

@@ -17,6 +17,7 @@ object LampStateMachine {
             "attention" -> current.copy(
                 state = LampState.ATTENTION_YELLOW,
                 elapsedMillis = elapsed(current, nowMillis),
+                startMillis = 0L,
                 lastTitle = message.title,
                 lastBody = message.body,
                 lastStateLabel = "attention",
@@ -25,6 +26,7 @@ object LampStateMachine {
             "done", "idle" -> current.copy(
                 state = LampState.IDLE_RED,
                 elapsedMillis = elapsed(current, nowMillis),
+                startMillis = 0L,
                 lastTitle = message.title,
                 lastBody = message.body,
                 lastStateLabel = state ?: "idle",
