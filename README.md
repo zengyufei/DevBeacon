@@ -1,5 +1,7 @@
 # DevBeacon
 
+[简体中文](README.zh-CN.md) | English
+
 DevBeacon is a local PC-to-Android notification bridge for Claude Code and other developer workflow events. The Android app shows a simple traffic-light panel: green for running, yellow for attention needed, and red for done or idle.
 
 Battery conservation is the default. In normal production mode Android actively polls the PC server and does not open a direct listener. Direct receive mode is available when you explicitly want one-shot CLI sends without starting the PC server.
